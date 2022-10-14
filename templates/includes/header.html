@@ -1,0 +1,23 @@
+  {%load static %}
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center" style="z-index: 2;">
+          <div class="header-text">
+            <h6>{{information.title}}</h6>
+            <h2 style="margin: 0;position: relative;z-index: 2;" >{{information.description | safe}}</h2>
+            <div class="main-button-gradient">
+              <div class="scroll-to-section"><a href="{% url 'users:register' %}">Join Us Now!</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="{% static 'assets/images/banner-right-image.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->

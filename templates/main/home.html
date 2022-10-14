@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{title}}  {% endblock title %}
+
+{% block content %}
+
+<section class="services" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h6>Our Services</h6>
+            <h4>Provided <em>Services</em></h4>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-01.png' %}" alt="">
+                </div>
+                <h4>Useful Tricks</h4>
+                <p>EduWell is the professional HTML5 template for your school or university websites.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
+                </div>
+                <h4>Creative Ideas</h4>
+                <p>You can download and use this EduWell Template for your teaching and learning stuffs.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
+                </div>
+                <h4>Ready Target</h4>
+                <p>Please tell your friends about the best CSS template website that is TemplateMo.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-04.png' %}" alt="">
+                </div>
+                <h4>Technology</h4>
+                <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-01.png' %}" alt="">
+                </div>
+                <h4>Useful Tricks</h4>
+                <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
+                </div>
+                <h4>Creative Ideas</h4>
+                <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
+                </div>
+                <h4>Ready Target</h4>
+                <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-04.png'  %}" alt="">
+                </div>
+                <h4>Technology</h4>
+                <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-01.png' %}" alt="">
+                </div>
+                <h4>Useful Tricks</h4>
+                <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
+                </div>
+                <h4>Creative Ideas</h4>
+                <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
+                </div>
+                <h4>Ready Target</h4>
+                <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="{% static 'assets/images/service-icon-04.png' %}" alt="">
+                </div>
+                <h4>Technology</h4>
+                <p>Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h6>OUR COURSES</h6>
+            <h4>What You Can <em>Learn</em></h4>
+            <p>You just think about TemplateMo whenever you need free CSS templates for your business website</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="tabs">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="menu">
+                    {% for cat in course_cat %}
+                    <div class="{% if forloop.counter == 1 %} active {% endif %} gradient-border"><span>{{cat.title}}</span></div>
+{% endfor %}
+                  </div>
+                </div>
+                <div class="col-lg-9">
+                  <ul class="nacc">
+
+                    {% for course in courses %}
+                  
+                    <li class="{% if forloop.counter == 1 %} active {% endif %} ">
+                      <div>
+                        <div class="left-image">
+                          <img src="{{course.thumbnail.url}}" alt="">
+                          <div class="price"><h6>${{course.price}}</h6></div>
+                          <div class="price" style=""><h6 style="background: linear-gradient(-145deg, #4caf50 0%, rgb(37 164 42) 100%);top: 85px">${{course.discounted}}</h6></div>
+                        </div>
+                        <div class="right-content">
+                          <h4>{{course.title}}</h4>
+                          <p>{{course.information}} 
+                          </p>
+                          <span>36 Hours</span>
+                          <span>4 Weeks</span>
+                          <span class="last-span">3 Certificates</span>
+                          <div class="text-button">
+                            <a href="{% url 'courses:detail' course.slug %}">Subscribe Course</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+{% endfor %}
+                    </ul>
+                </div>
+
+                <div class="col-lg-12">
+                  <a href="{% url 'courses:list' %}">
+                  <button class="btn btn-primary" style="margin: 20px auto;
+                  width: fit-content;
+                  display: block;
+                  background: #e197ce;
+                  border: none;
+                  padding: 10px 25px;">ALL COURSES</button>
+                </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 offset-lg-1">
+          <div class="left-image">
+            <img src="{{last_course.thumbnail.url}}" alt="">
+          </div>
+        </div>
+        {% if last_course %}
+        <div class="col-lg-5 align-self-center">
+          <h6>{{last_course.title}}</h6>
+          <h4>FOR ONLY {{last_course.discounted}} $</h4>
+          <p>{{last_course.thumbnail.information}}</p>
+          <div class="white-button">
+            <a href="{% url 'courses:detail' last_course.slug %}">View Courses</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h6>Testimonials</h6>
+            <h4>What They <em>Think</em></h4>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-testimonials owl-carousel" style="position: relative; z-index: 5;">
+            {% for message in activate_messages %}
+            <div class="item">
+              <p>{{message.title}}</p>
+                <h4>{{message.user}}</h4>
+                <span>{{message.subject}}</span>
+                <img src="{% static 'assets/images/quote.png' %}" alt="">
+            </div>
+            {% endfor %}
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us" id="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div id="map">
+          
+            <!-- You just need to go to Google Maps for your own map point, and copy the embed code from Share -> Embed a map section -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7151.84524236698!2d-122.19494600413192!3d47.56605883252286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490695e625f8965%3A0xf99b055e76477def!2sNewcastle%20Beach%20Park%20Playground%2C%20Bellevue%2C%20WA%2098006%2C%20USA!5e0!3m2!1sen!2sth!4v1644335269264!5m2!1sen!2sth" width="100%" height="420px" frameborder="0" style="border:0; border-radius: 15px; position: relative; z-index: 2;" allowfullscreen=""></iframe>
+            <div class="row">
+              <div class="col-lg-4 offset-lg-1">
+                <div class="contact-info">
+                  <div class="icon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <h4>Phone</h4>
+                  <span>010-020-0340</span>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="contact-info">
+                  <div class="icon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <h4>Mobile</h4>
+                  <span>090-080-0760</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <form id="contact" action="{% url 'users:message' %}" method="post" class="myform">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Contact us</h6>
+                  <h4>Say <em>Hello</em></h4>
+                  <p>IF you need a working contact form by PHP script, please visit TemplateMo's contact page for more info.</p>
+                </div>
+              </div>
+              {% for field in message_form %}
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="">{{field.label}}</label>
+                  {{field}}
+                </fieldset>
+              </div>
+              {% endfor %}
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-gradient-button">Send Message</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-12">
+          <ul class="social-icons">
+            {% for social in socials %}
+            <li><a href="{{social.url}}"><img src="{{social.img.url}}" alt=""></a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-lg-12">
+          <p class="copyright">Copyright © 2022 EduWell Co., Ltd. All Rights Reserved. 
+          
+          <br>Design: <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock content %}

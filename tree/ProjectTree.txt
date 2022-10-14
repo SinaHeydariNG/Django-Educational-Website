@@ -1,0 +1,25 @@
+Educational Project Tree :
+
+	An educational website where we have many courses
+	If a user want to access our courses he has to logged-in So we have authentication proccess
+	Each user has its own profile
+	Where the user should see , which courses he has applied for
+	And user should see the response of his messages in his profile page
+	The Owner of website can handle all of the messages and chose which of them has to be shown in the landing page
+	
+	Models : 
+		User extended model
+			First_name Last_name Email , Address , Phone
+
+		Courses		
+		Social Medias		
+		Messages	
+		
+	Last Tasks To Bo Done : 
+		Alert Messages
+		Response Messages
+		Links and footer in all pages needs to be fixed well :)
+
+		Form Validation
+		Pagination
+		

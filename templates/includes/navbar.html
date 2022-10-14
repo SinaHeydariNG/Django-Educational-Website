@@ -1,0 +1,35 @@
+{% load static %}
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url 'main:home' %}" class="logo">
+                        <img src="{% static 'assets/images/templatemo-eduwell.png' %}" alt="EduWell Template">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="{% if request.path != '/' %}unactive{% endif %}"><a href="{% url 'main:home' %}">Home</a></li>
+                        <li class="{% if request.path == '/courses/' %}active{% endif %}"><a href="{% url 'courses:list' %}">Courses</a></li>
+                        <li class="{% if request.path == '/accounts/message/' %}active{% endif %}"><a href="{% url 'users:message' %}">Contact Us</a></li> 
+                        {% if request.user.is_authenticated %}
+                        <li class=" {% if request.path == '/accounts/dashboard/' %}active{% endif %}"><a href="{% url 'users:dashboard' %}">Profile</a></li>
+                        <li class=""><a href="{% url 'users:logout' %}">LogOut</a></li>
+                        {% else %}
+                        <li class=" {% if request.path == '/accounts/register/' %}active{% endif %}"><a href="{% url 'users:register' %}">register</a></li>
+                        <li class=" {% if request.path == '/accounts/login/' %}active{% endif %}"><a href="{% url 'users:login' %}">login</a></li> 
+                        {% endif %}
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
